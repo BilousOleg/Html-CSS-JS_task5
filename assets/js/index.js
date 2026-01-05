@@ -74,3 +74,39 @@ console.log(isDivisor(10)); // У випадку, коли число є діл�
 console.log(isDivisor(9)); // У випадку, коли число не є дільником
 console.log(isDivisor('ab')); // У випадку, коли введено нечисловий тип даних (і при приведенні не отримано число)
 console.log(isDivisor('ab', 'cd')); // У випадку, коли введено нечисловий тип даних (і при приведенні не отримано число)
+
+// Завдання 4
+
+/**
+ * Function gets 3 sides and determines existence of tringale by their lenght
+ * Uses Number(), .isNaN()
+ * @param {number} firstSide First side of triangle
+ * @param {number} secondSide Second side of triangle
+ * @param {number} thirdSide Third side of triangle
+ * @returns {boolean}
+ */
+function isTriangle(firstSide = 3, secondSide = 4, thirdSide = 5) {
+  firstSide = Number(firstSide);
+  secondSide = Number(secondSide);
+  thirdSide = Number(thirdSide);
+
+  if (
+    Number.isNaN(firstSide) ||
+    Number.isNaN(secondSide) ||
+    Number.isNaN(thirdSide)
+  ) {
+    return false;
+  }
+
+  return (
+    firstSide + secondSide > thirdSide &&
+    firstSide + thirdSide > secondSide &&
+    secondSide + thirdSide > firstSide
+  );
+}
+
+// Приклад використання функції
+console.log(isTriangle(4, 5, 6)); // Якщо будь-яка сума двох сторін більша за третю
+console.log(isTriangle(1, 2, 3)); // Якщо хоча б одна з сум двох сторін не більша за третю
+console.log(isTriangle('', '12', null)); // Якщо введені інші типи даних (і при приведенні типів отримуємо аналог другого прикладу)
+console.log(isTriangle()); // При використанні значень за замовчуванням
