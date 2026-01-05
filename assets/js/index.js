@@ -1,6 +1,7 @@
 /**
  * Side-effect function that gets value from user and determines, is it a number, and if it is, determines whether it is greater, equal or less than zero
  * Uses alert(), prompt(), .isNaN(), Number() and .trim()
+ * @returns {void}
  */
 function determineNumber() {
   const inputValue = prompt('Введіть число');
