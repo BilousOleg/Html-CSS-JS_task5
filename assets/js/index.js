@@ -80,9 +80,9 @@ console.log(isDivisor('ab', 'cd')); // У випадку, коли введен�
 /**
  * Function gets 3 sides and determines existence of tringale by their lenght
  * Uses Number(), .isNaN()
- * @param {number} firstSide First side of triangle
- * @param {number} secondSide Second side of triangle
- * @param {number} thirdSide Third side of triangle
+ * @param {number} [firstSide = 3] First side of triangle
+ * @param {number} [secondSide = 4] Second side of triangle
+ * @param {number} [thirdSide = 5] Third side of triangle
  * @returns {boolean}
  */
 function isTriangle(firstSide = 3, secondSide = 4, thirdSide = 5) {
