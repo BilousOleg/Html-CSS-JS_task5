@@ -14,10 +14,10 @@ function isNumber(inputValue) {
  * @returns {boolean}
  */
 function isDivisor(inputNumber, dividend = 100) {
-  if (isNumber(inputNumber) === false || isNumber(dividend) === false) {
-    return false;
+  if (isNumber(inputNumber) && isNumber(dividend)) {
+    return dividend % inputNumber === 0;
   }
-  return dividend % inputNumber === 0;
+  return false;
 }
 
 // Приклад використання
