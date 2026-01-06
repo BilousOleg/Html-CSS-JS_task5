@@ -29,20 +29,17 @@ console.log(compareValues(1, 1)); // Однакові значення
  */
 function determineNumber() {
   const inputValue = prompt('Введіть число');
-  if (inputValue !== null) {
-    if (inputValue.trim() === '') {
-      alert('Це не число');
+  if (
+    inputValue === null ||
+    inputValue.trim() === '' ||
+    Number.isNaN(Number(inputValue))
+  ) {
+    alert('Це не число');
+  } else {
+    if (inputValue !== '0') {
+      alert(inputValue > 0 ? 'Додатнє' : "Від'ємне");
     } else {
-      const numberValue = Number(inputValue);
-      if (Number.isNaN(numberValue)) {
-        alert('Це не число');
-      } else {
-        if (numberValue !== 0) {
-          alert(numberValue > 0 ? 'Додатнє' : "Від'ємне");
-        } else {
-          alert('Нуль');
-        }
-      }
+      alert('Нуль');
     }
   }
 }
