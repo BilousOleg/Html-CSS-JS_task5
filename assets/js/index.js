@@ -3,7 +3,7 @@
  * @param {*} inputValue Value to check
  * @returns {boolean}
  */
-function isNumber(inputValue) {
+function isNumberValue(inputValue) {
   return typeof inputValue === 'number';
 }
 
@@ -16,7 +16,11 @@ function isNumber(inputValue) {
  * @returns {boolean}
  */
 function isTriangle(firstSide = 3, secondSide = 4, thirdSide = 5) {
-  if (isNumber(firstSide) && isNumber(secondSide) && isNumber(thirdSide)) {
+  if (
+    isNumberValue(firstSide) &&
+    isNumberValue(secondSide) &&
+    isNumberValue(thirdSide)
+  ) {
     return (
       firstSide + secondSide > thirdSide &&
       firstSide + thirdSide > secondSide &&
